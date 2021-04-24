@@ -11,77 +11,21 @@
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <script type="text/javascript" src="js/jquery-2.1.0.js"></script>
       
-      <script type="text/javascript">
-      $(document).ready(function(){
     
-        //Aqui a ativa a imagem de load
-        function loading_show(){
-        $('#loading').html("<img src='img/loading.gif'/>").fadeIn('fast');
-        }
-        
-        //Aqui desativa a imagem de loading
-        function loading_hide(){
-            $('#loading').fadeOut('fast');
-        }       
-        
-        // aqui a fun��o ajax que busca os dados em outra pagina do tipo html, n�o � json
-        function load_dados(valores, page, div)
-        {
-            $.ajax
-                ({
-                    type: 'POST',
-                    dataType: 'html',
-                    url: page,
-                    beforeSend: function(){//Chama o loading antes do carregamento
-                      loading_show();
-            },
-                    data: valores,
-                    success: function(msg)
-                    {
-                        loading_hide();
-                        var data = msg;
-                  $(div).html(data).fadeIn();				
-                    }
-                });
-        }
-        
-        //Aqui eu chamo o metodo de load pela primeira vez sem parametros para pode exibir todos
-        load_dados(null, 'pesquisa.php', '#');
-        
-        
-        //Aqui uso o evento key up para come�ar a pesquisar, se valor for maior q 0 ele faz a pesquisa
-        $('#cns').keyup(function(){
-            
-            var valores = $('#form_pesquisa').serialize()//o serialize retorna uma string pronta para ser enviada
-            
-            //pegando o valor do campo #pesquisaCliente
-            var $parametro = $(this).val();
-            
-            if($parametro.length >= 13)
-            {
-                load_dados(valores, 'pesquisa.php', '#MostraPesq');
-            }else
-            {
-                load_dados(null, 'pesquisa.php', '#');
-            }
-        });
-    
-      });
-      </script>	
 </head>
 <body>
   <nav class="#1b5e20 green darken-4" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img src="img/logo_menor.png">Cartão Nacional</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Inicio</a></li>
-        <li><a href="http://importacartao.eletivassc.com.br">Importa Cartão</a></li>
-        <li><a class="white-text" href="https://www.saude.sc.gov.br/">SES</a></li>
+        <li><a href="#">Menu 0</a></li>
+        <li><a class="white-text" href="#">Menu 1</a></li>
 
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
-        <li><a href="http://importacartao.eletivassc.com.br">Importa Cartão</a></li>
-        <li><a href="https://www.saude.sc.gov.br/">SES</a></li>
+        <li><a href="#">Menu 0</a></li>
+        <li><a href="#">Menu 1 </a></li>
 
 
       </ul>
@@ -100,21 +44,14 @@
       <div class="row center">
         
              
-<?php include("contador.php"); ?>  
 
 <center>
   <article>
          
-          <form name="form_pesquisa" id="form_pesquisa" method="post" action="">
-      <fieldset>
-        <legend>Digite o Número do Cartao</legend>
-          <div class="input-prepend">
-            <span class="add-on"><i class="icon-search"></i></span>
-            <input type="text" name="cns" id="cns" value="" tabindex="1" placeholder="Pesquisar Cartao Nacional..." />
-          </div>
-      </fieldset>
-    </form>
+    
 
+
+    
        
 
         <?php 
