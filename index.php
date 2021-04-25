@@ -109,7 +109,6 @@
     <br><br>
   </div>
 
- 
 
   <footer class="#1b5e20 green darken-4">
     <div class="container">
@@ -128,13 +127,13 @@
           <h5 class="white-text">Conecta</h5>
           <ul>
             <li><a class="white-text" href="https://www.saude.sc.gov.br/">SES</a></li>
-            <li><a class="white-text" href="http://importacartao.eletivassc.com.br/">Importa Cartão</a></li>
+            <li><a class="white-text" href="#">Titulo do Site</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer-copyright">
-      <div class="container"><h6 class="header center blue-text">Secretaria de Estado da Saúde 
+      <div class="container"><h6 class="header center blue-text">Frase de Rodapé
     @ <?php echo $today; ?> <a class="orange-text text-lighten-3" href="http://materializecss.com"></a></h6>
       </div>
     </div>
